@@ -9,3 +9,7 @@ cmake -H. -Bbuild -GNinja
 cmake --build build
 ./build/bin/a.out
 ```
+
+```shell
+cmake -H. -Bbuild -GNinja && cmake --build build && ./build/bin/a.out
+```
