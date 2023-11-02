@@ -19,7 +19,7 @@
   "forwardPorts": [8000],
 
   // Uncomment the next line to run commands after the container is created.
-  "postCreateCommand": "cat /etc/os-release && dos2unix --version && g++ --version && cmake --version && node --version && yarn --version",
+  "postCreateCommand": "cat /etc/os-release && dos2unix --version && g++ --version && cmake --version && ninja --version && node --version && yarn --version",
 
   // Configure tool-specific properties.
   "customizations": {
