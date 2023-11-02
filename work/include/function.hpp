@@ -1,7 +1,7 @@
 #ifndef FUNCTION_HPP
 #define FUNCTION_HPP
 
-#include <string.h>
+using namespace std;
 
 #include "interface.hpp"
 #include "config.hpp"

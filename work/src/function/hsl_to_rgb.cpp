@@ -1,8 +1,8 @@
 #ifndef HSL_TO_RGB_CPP
 #define HSL_TO_RGB_CPP
 
-#include <cmath>
 #include <array>
+#include <cmath>
 #include <iostream>
 
 #include "interface.hpp"

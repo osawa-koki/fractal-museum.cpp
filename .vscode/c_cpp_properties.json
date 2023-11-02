@@ -6,6 +6,7 @@
         "${workspaceFolder}/**/",
         "${workspaceFolder}/work/include/",
         "${workspaceFolder}/work/include/config/",
+        "${workspaceFolder}/work/include/lib/",
       ],
       "defines": [],
       "compilerPath": "/usr/bin/g++",

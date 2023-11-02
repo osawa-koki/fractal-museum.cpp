@@ -9,7 +9,7 @@
 #include "const.hpp"
 #include "function.hpp"
 #include "interface.hpp"
-#include "mandelbrot.hpp"
+#include "mandelbrot_config.hpp"
 
 using namespace std;
 
