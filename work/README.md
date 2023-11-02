@@ -7,5 +7,5 @@
 ```shell
 cmake -H. -Bbuild -GNinja
 cmake --build build
-./build/src/a.out
+./build/bin/a.out
 ```
