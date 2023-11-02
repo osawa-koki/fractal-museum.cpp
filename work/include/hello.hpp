@@ -1,5 +1,5 @@
-#ifndef HELLO_H
-#define HELLO_H
+#ifndef HELLO_HPP
+#define HELLO_HPP
 
 void hello();
 
