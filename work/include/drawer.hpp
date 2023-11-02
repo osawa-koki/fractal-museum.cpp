@@ -3,8 +3,7 @@
 
 #include <string>
 
-#include "mandelbrot.hpp"
-#include "julia.hpp"
+#include "config.hpp"
 
 namespace drawer {
   void mandelbrot(Mandelbrot* mandelbrot_config);

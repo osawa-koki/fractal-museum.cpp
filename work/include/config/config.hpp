@@ -3,8 +3,8 @@
 
 #include <string>
 
-#include "mandelbrot.hpp"
-#include "julia.hpp"
+#include "mandelbrot_config.hpp"
+#include "julia_config.hpp"
 
 using namespace std;
 

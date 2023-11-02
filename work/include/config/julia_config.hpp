@@ -1,8 +1,6 @@
 #ifndef CONFIG_JULIA_HPP
 #define CONFIG_JULIA_HPP
 
-#include <string>
-
 using namespace std;
 
 struct Julia {
