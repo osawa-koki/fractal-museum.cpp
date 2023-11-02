@@ -1,10 +1,10 @@
 add_executable(a.out
-  main.cpp
-  hello.cpp
-  make_image.cpp
-  mandelbrot.cpp
-  julia.cpp
-  hsl_to_rgb.cpp
+  ./main.cpp
+  ./hello.cpp
+  ./make_image.cpp
+  ./drawer/mandelbrot.cpp
+  ./drawer/julia.cpp
+  ./hsl_to_rgb.cpp
 )
 
 set_target_properties(a.out PROPERTIES OUTPUT_NAME "./program.out")
