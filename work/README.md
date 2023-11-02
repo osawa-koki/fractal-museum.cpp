@@ -5,7 +5,7 @@
 ## 実行方法
 
 ```shell
-g++ -c ./src/main.cpp ./src/hello.cpp -I./include/
-g++ -o ./a.out ./main.o ./hello.o
-./a.out
+cmake -S . -B ./build/
+cmake --build ./build/
+./build/src/a.out
 ```
