@@ -1,5 +1,5 @@
-#ifndef drawer_julia_hpp
-#define drawer_julia_hpp
+#ifndef DRAWER_JULIA_CPP
+#define DRAWER_JULIA_CPP
 
 #include <iostream>
 #include <fstream>
@@ -72,7 +72,7 @@ namespace drawer {
     }
 
     // 画像をファイルに出力する
-    ofstream output_file("julia.png", ios::binary);
+    ofstream output_file(julia_config->output_file, ios::binary);
     png_structp png = png_create_write_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
     png_infop info = png_create_info_struct(png);
     png_set_write_fn(
