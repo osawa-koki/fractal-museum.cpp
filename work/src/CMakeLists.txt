@@ -3,6 +3,7 @@ add_executable(a.out
   hello.cpp
   make_image.cpp
   mandelbrot.cpp
+  julia.cpp
   hsl_to_rgb.cpp
 )
 

@@ -7,4 +7,5 @@ int main()
     hello();
     make_image();
     drawer::mandelbrot();
+    drawer::julia();
 }

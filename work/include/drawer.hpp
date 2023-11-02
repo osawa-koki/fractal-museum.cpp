@@ -3,6 +3,7 @@
 
 namespace drawer {
   void mandelbrot();
+  void julia();
 }
 
 #endif
