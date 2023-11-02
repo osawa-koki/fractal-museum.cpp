@@ -7,9 +7,9 @@
 ```shell
 cmake -H. -Bbuild -GNinja
 cmake --build build
-./build/bin/a.out
+./build/bin/program.out
 ```
 
 ```shell
-cmake -H. -Bbuild -GNinja && cmake --build build && ./build/bin/a.out
+cmake -H. -Bbuild -GNinja && cmake --build build && ./build/bin/program.out
 ```
