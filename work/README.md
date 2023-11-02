@@ -5,7 +5,7 @@
 ## 実行方法
 
 ```shell
-cmake -S . -B ./build/
-cmake --build ./build/
+cmake -H. -Bbuild -GNinja
+cmake --build build
 ./build/src/a.out
 ```
