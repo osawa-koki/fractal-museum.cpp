@@ -1,7 +1,10 @@
 #include "drawer.hpp"
+#include "config.hpp"
+#include "function.hpp"
 
 int main()
 {
-    drawer::mandelbrot();
-    drawer::julia();
+    Config *config = config_parser();
+    drawer::mandelbrot(config->mandelbrot);
+    drawer::julia(config->julia);
 }

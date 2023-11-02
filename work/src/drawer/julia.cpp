@@ -2,11 +2,11 @@
 #define drawer_julia_hpp
 
 #include <iostream>
-#include <string>
-#include <png.h>
-#include <iostream>
 #include <fstream>
+#include <png.h>
+#include <string>
 
+#include "const.hpp"
 #include "function.hpp"
 #include "interface.hpp"
 
@@ -14,23 +14,20 @@ using namespace std;
 
 namespace drawer {
 
-  void julia() {
-    int MAX_COLOR_VALUE = 255;
+  void julia(Julia* julia_config) {
+    int width = julia_config->width;
+    int height = julia_config->height;
 
-    // 画像の幅と高さを指定する
-    int width = 1024;
-    int height = 1024;
+    double x_min = julia_config->x_min;
+    double x_max = julia_config->x_max;
+    double y_min = julia_config->y_min;
+    double y_max = julia_config->y_max;
 
-    double x_min = -1.5;
-    double x_max = 1.5;
-    double y_min = -1.5;
-    double y_max = 1.5;
+    double cx = julia_config->cx;
+    double cy = julia_config->cy;
 
-    double cx = -0.4;
-    double cy = 0.6;
-
-    int max_iterations = 200;
-    int color_base = 0;
+    int max_iterations = julia_config->max_iterations;
+    int color_base = julia_config->color_base;
 
     // 画像のデータを格納する配列を確保する
     png_bytep *row_pointers = (png_bytep *)malloc(sizeof(png_bytep) * height);
@@ -105,7 +102,6 @@ namespace drawer {
 
     return;
   }
-
 }
 
 #endif

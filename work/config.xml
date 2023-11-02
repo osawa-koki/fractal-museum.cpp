@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="config.xsd">
+
+  <width>512</width>
+  <height>512</height>
+  <output_directory>./dist/</output_directory>
+
+  <mandelbrot>
+    <x_min>-2.2</x_min>
+    <x_max>0.8</x_max>
+    <y_min>-1.5</y_min>
+    <y_max>1.5</y_max>
+    <max_iterations>30</max_iterations>
+    <output_file>mandelbrot.png</output_file>
+  </mandelbrot>
+
+  <julia>
+    <x_min>-1.5</x_min>
+    <x_max>1.5</x_max>
+    <y_min>-1.5</y_min>
+    <y_max>1.5</y_max>
+    <cx>-0.4</cx>
+    <cy>0.6</cy>
+    <threshold>100</threshold>
+    <max_iterations>200</max_iterations>
+    <color_base>0</color_base>
+    <output_file>julia.png</output_file>
+  </julia>
+</config>
