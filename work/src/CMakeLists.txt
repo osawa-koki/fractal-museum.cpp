@@ -3,6 +3,9 @@ add_executable(a.out
   ./drawer/mandelbrot.cpp
   ./drawer/julia.cpp
   ./hsl_to_rgb.cpp
+  ./config_parser.cpp
+  ./join_path.cpp
+  ./pugixml.cpp
 )
 
 set_target_properties(a.out PROPERTIES OUTPUT_NAME "./program.out")
@@ -13,5 +16,5 @@ target_link_libraries(a.out
 )
 
 target_include_directories(a.out
-  PUBLIC ${PROJECT_SOURCE_DIR}/include/
+  PUBLIC ${PROJECT_SOURCE_DIR}/include/ ${PROJECT_SOURCE_DIR}/include/config/
 )

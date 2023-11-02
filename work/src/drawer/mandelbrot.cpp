@@ -2,31 +2,29 @@
 #define DRAWER_MANDELBROT_CPP
 
 #include <iostream>
-#include <string>
-#include <png.h>
-#include <iostream>
 #include <fstream>
+#include <png.h>
+#include <string>
 
+#include "const.hpp"
 #include "function.hpp"
 #include "interface.hpp"
+#include "mandelbrot.hpp"
 
 using namespace std;
 
 namespace drawer {
 
-  void mandelbrot() {
-    int MAX_COLOR_VALUE = 255;
+  void mandelbrot(Mandelbrot* mandelbrot_config) {
+    int width = mandelbrot_config->width;
+    int height = mandelbrot_config->height;
 
-    // 画像の幅と高さを指定する
-    int width = 1024;
-    int height = 1024;
+    double x_min = mandelbrot_config->x_min;
+    double x_max = mandelbrot_config->x_max;
+    double y_min = mandelbrot_config->y_min;
+    double y_max = mandelbrot_config->y_max;
 
-    double x_min = -2.2;
-    double x_max = 0.8;
-    double y_min = -1.5;
-    double y_max = 1.5;
-
-    int max_iterations = 30;
+    int max_iterations = mandelbrot_config->max_iterations;
 
     // 画像のデータを格納する配列を確保する
     png_bytep *row_pointers = (png_bytep *)malloc(sizeof(png_bytep) * height);
@@ -71,7 +69,7 @@ namespace drawer {
     }
 
     // 画像をファイルに出力する
-    ofstream output_file("mandelbrot.png", ios::binary);
+    ofstream output_file(mandelbrot_config->output_file, ios::binary);
     png_structp png = png_create_write_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
     png_infop info = png_create_info_struct(png);
     png_set_write_fn(
@@ -101,7 +99,6 @@ namespace drawer {
 
     return;
   }
-
 }
 
 #endif
