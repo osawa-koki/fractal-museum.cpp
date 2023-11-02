@@ -1,7 +1,5 @@
 add_executable(a.out
   ./main.cpp
-  ./hello.cpp
-  ./make_image.cpp
   ./drawer/mandelbrot.cpp
   ./drawer/julia.cpp
   ./hsl_to_rgb.cpp

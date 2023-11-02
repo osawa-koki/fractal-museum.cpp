@@ -7,8 +7,6 @@
 
 #include "interface.hpp"
 
-using namespace std;
-
 RGB *hsl_to_rgb(HSL *hsl)
 {
     int MAX_COLOR_VALUE = 255;
