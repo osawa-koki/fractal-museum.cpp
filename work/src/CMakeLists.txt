@@ -2,6 +2,8 @@ add_executable(a.out
   main.cpp
   hello.cpp
   make_image.cpp
+  mandelbrot.cpp
+  hsl_to_rgb.cpp
 )
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c17 -Wall -Wextra -Wpedantic")
