@@ -15,7 +15,7 @@ struct Tricorn {
   double y_max;
   int threshold;
   int max_iterations;
-  int color_base;
+  int color_hue_base;
   string output_file;
 };
 

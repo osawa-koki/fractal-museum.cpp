@@ -11,6 +11,7 @@ struct Mandelbrot {
   double y_min;
   double y_max;
   int max_iterations;
+  int color_hue_base;
   string output_file;
 };
 

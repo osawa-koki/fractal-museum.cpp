@@ -13,7 +13,7 @@ struct Julia {
   int max_iterations;
   double cx;
   double cy;
-  int color_base;
+  int color_hue_base;
   string output_file;
 };
 

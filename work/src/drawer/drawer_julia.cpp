@@ -25,7 +25,7 @@ namespace drawer {
     double cy = julia_config->cy;
 
     int max_iterations = julia_config->max_iterations;
-    int color_base = julia_config->color_base;
+    int color_hue_base = julia_config->color_hue_base;
 
     // 画像のデータを格納する配列を確保する
     png_bytep *row_pointers = (png_bytep *)malloc(sizeof(png_bytep) * height);
@@ -56,7 +56,7 @@ namespace drawer {
         }
 
         // 計算結果を色に変換する
-        int color = i * 360 / max_iterations + color_base;
+        int color = i * 360 / max_iterations + color_hue_base;
         HSL* hsl = new HSL();
         hsl->h = color;
         hsl->s = 100;
