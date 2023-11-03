@@ -1,5 +1,5 @@
 FROM ubuntu:22.04
-RUN apt -qq -y update && apt -qq -y install dos2unix cmake build-essential libpng-dev ninja-build
+RUN apt -qq -y update && apt -qq -y install dos2unix cmake build-essential libpng-dev
 
 RUN apt update && \
     apt install -y ca-certificates curl gnupg && \
