@@ -13,15 +13,14 @@
 
 using namespace std;
 
-namespace drawer {
-
-  struct SierpinskiTriangleGlobalStruct {
+namespace private_sierpinski_triangle {
+      struct GlobalStruct {
     int color_hex;
     int filling_color_hex;
     int max_iterations;
   };
 
-  void draw_sierpinski_triangle(png_bytep *row_pointers, SierpinskiTriangleGlobalStruct global_struct, int x, int y, int size) {
+  void draw(png_bytep *row_pointers, GlobalStruct global_struct, int x, int y, int size) {
     int p1_x = x + size / 2;
     int p1_y = y - sin(-60 * M_PI / 180) * size;
     int p2_x = x + size;
@@ -34,7 +33,7 @@ namespace drawer {
     draw_polygon(row_pointers, global_struct.filling_color_hex, vertices);
   }
 
-  void sierpinski_triangle_rec_fx(png_bytep *row_pointers, SierpinskiTriangleGlobalStruct global_struct, int x, int y, int size, int n) {
+  void rec_fx(png_bytep *row_pointers, GlobalStruct global_struct, int x, int y, int size, int n) {
     if (global_struct.max_iterations < n) return;
 
     int p1_x = cos(240 * M_PI / 180) * 1 / 4 * size + x;
@@ -44,14 +43,19 @@ namespace drawer {
     int p3_x = p2_x + size / 2;
     int p3_y = p2_y;
 
-    draw_sierpinski_triangle(row_pointers, global_struct, p1_x, p1_y, size / 4);
-    draw_sierpinski_triangle(row_pointers, global_struct, p2_x, p2_y, size / 4);
-    draw_sierpinski_triangle(row_pointers, global_struct, p3_x, p3_y, size / 4);
+    draw(row_pointers, global_struct, p1_x, p1_y, size / 4);
+    draw(row_pointers, global_struct, p2_x, p2_y, size / 4);
+    draw(row_pointers, global_struct, p3_x, p3_y, size / 4);
 
-    sierpinski_triangle_rec_fx(row_pointers, global_struct, x, y, size / 2, n + 1);
-    sierpinski_triangle_rec_fx(row_pointers, global_struct, cos(240 * M_PI / 180) * 1 / 2 * size + x, y - sin(240 * M_PI / 180) * 1 / 2 * size, size / 2, n + 1);
-    sierpinski_triangle_rec_fx(row_pointers, global_struct, cos(-60 * M_PI / 180) * 1 / 2 * size + x, y - sin(-60 * M_PI / 180) * 1 / 2 * size, size / 2, n + 1);
+    rec_fx(row_pointers, global_struct, x, y, size / 2, n + 1);
+    rec_fx(row_pointers, global_struct, cos(240 * M_PI / 180) * 1 / 2 * size + x, y - sin(240 * M_PI / 180) * 1 / 2 * size, size / 2, n + 1);
+    rec_fx(row_pointers, global_struct, cos(-60 * M_PI / 180) * 1 / 2 * size + x, y - sin(-60 * M_PI / 180) * 1 / 2 * size, size / 2, n + 1);
   }
+}
+
+using namespace private_sierpinski_triangle;
+
+namespace drawer {
 
   void sierpinski_triangle(SierpinskiTriangle* sierpinski_triangle_config) {
     int width = sierpinski_triangle_config->width;
@@ -64,7 +68,7 @@ namespace drawer {
     int triangle_size = sierpinski_triangle_config->triangle_size;
     int max_iterations = sierpinski_triangle_config->max_iterations;
 
-    SierpinskiTriangleGlobalStruct global_struct = {
+    GlobalStruct global_struct = {
       color,
       filling_color,
       max_iterations
@@ -118,7 +122,7 @@ namespace drawer {
       draw_polygon(row_pointers, filling_color, vertices);
     }
 
-    sierpinski_triangle_rec_fx(row_pointers, global_struct, width / 2, start, size, 1);
+    rec_fx(row_pointers, global_struct, width / 2, start, size, 1);
 
     // 画像をファイルに出力する
     ofstream output_file(sierpinski_triangle_config->output_file, ios::binary);
