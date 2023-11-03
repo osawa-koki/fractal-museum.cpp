@@ -19,7 +19,7 @@ export default function Home (props: Props): React.JSX.Element {
             type: 'loop',
             perPage: 1
           }}
-          className='d-block m-auto'
+          className='d-block m-auto mw-100'
           style={{
             width: `${setting.imageSize}px`
           }}
