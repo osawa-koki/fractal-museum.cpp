@@ -5,6 +5,7 @@
 
 #include "mandelbrot_config.hpp"
 #include "julia_config.hpp"
+#include "tricorn_config.hpp"
 
 using namespace std;
 
@@ -14,6 +15,7 @@ struct Config {
   string output_directory;
   Mandelbrot* mandelbrot;
   Julia* julia;
+  Tricorn* tricorn;
 };
 
 #endif

@@ -65,5 +65,19 @@ Config* config_parser() {
   julia->output_file = join_path(config->output_directory, julia_node.child("output_file").child_value());
   config->julia = julia;
 
+  pugi::xml_node tricorn_node = config_node.child("tricorn");
+  Tricorn* tricorn = new Tricorn();
+  tricorn->width = width;
+  tricorn->height = height;
+  tricorn->x_min = stod(tricorn_node.child("x_min").child_value());
+  tricorn->x_max = stod(tricorn_node.child("x_max").child_value());
+  tricorn->y_min = stod(tricorn_node.child("y_min").child_value());
+  tricorn->y_max = stod(tricorn_node.child("y_max").child_value());
+  tricorn->threshold = stoi(tricorn_node.child("threshold").child_value());
+  tricorn->max_iterations = stoi(tricorn_node.child("max_iterations").child_value());
+  tricorn->color_base = stoi(tricorn_node.child("color_base").child_value());
+  tricorn->output_file = join_path(config->output_directory, tricorn_node.child("output_file").child_value());
+  config->tricorn = tricorn;
+
   return config;
 }

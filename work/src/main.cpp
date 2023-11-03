@@ -7,4 +7,5 @@ int main()
     Config *config = config_parser();
     drawer::mandelbrot(config->mandelbrot);
     drawer::julia(config->julia);
+    drawer::tricorn(config->tricorn);
 }
