@@ -42,6 +42,9 @@ jobs:
   www-build:
     runs-on: ubuntu-22.04
     needs: work-build
+    defaults:
+      run:
+        working-directory: ${{ env.www-directory }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
