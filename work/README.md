@@ -5,11 +5,11 @@
 ## 実行方法
 
 ```shell
-cmake -H. -Bbuild -GNinja
+cmake -H. -B build
 cmake --build build
 ./build/bin/program.out
 ```
 
 ```shell
-cmake -H. -Bbuild -GNinja && cmake --build build && ./build/bin/program.out
+cmake -H. -B build && cmake --build build && ./build/bin/program.out
 ```
