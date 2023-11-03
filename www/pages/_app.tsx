@@ -21,7 +21,7 @@ export default function MyApp ({ Component, pageProps }: AppProps): React.JSX.El
         <link
           rel='icon'
           type='image/png'
-          href={`${setting.basePath}/favicon.ico`}
+          href='/favicon.ico'
         />
       </Head>
       <Layout>
