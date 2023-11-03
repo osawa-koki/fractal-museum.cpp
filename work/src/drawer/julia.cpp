@@ -1,6 +1,3 @@
-#ifndef DRAWER_JULIA_CPP
-#define DRAWER_JULIA_CPP
-
 #include <iostream>
 #include <fstream>
 #include <png.h>
@@ -104,5 +101,3 @@ namespace drawer {
     return;
   }
 }
-
-#endif

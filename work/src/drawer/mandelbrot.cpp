@@ -1,6 +1,3 @@
-#ifndef DRAWER_MANDELBROT_CPP
-#define DRAWER_MANDELBROT_CPP
-
 #include <iostream>
 #include <fstream>
 #include <png.h>
@@ -100,5 +97,3 @@ namespace drawer {
     return;
   }
 }
-
-#endif
