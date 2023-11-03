@@ -9,8 +9,7 @@ export default function Home (): React.JSX.Element {
     <>
       <div id='Index' className='d-flex flex-column align-items-center'>
         <h1>{setting.title}</h1>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <Image id='Logo' className='mt-3' width={setting.imageSize} height={setting.imageSize} src='/tako.png' alt='Logo' />
+        <Image id='Logo' className='mt-3 border rounded-circle' width={100} height={100} src='/tako.png' alt='Logo' />
         <Alert variant='info' className='mt-5'>
           <Alert.Heading>フラクタル図形とは？</Alert.Heading>
           <hr />
