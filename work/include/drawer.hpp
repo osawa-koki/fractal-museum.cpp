@@ -13,6 +13,7 @@ namespace drawer {
   void barnsley_fern(BarnsleyFern* barnsley_fern_config);
   void pythagoras_tree(PythagorasTree* pythagoras_tree_config);
   void recursive_tree(RecursiveTree* recursive_tree_config);
+  void sierpinski_triangle(SierpinskiTriangle* sierpinski_triangle_config);
 }
 
 #endif

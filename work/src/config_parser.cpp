@@ -137,5 +137,17 @@ Config* config_parser() {
   recursive_tree->output_file = join_path(config->output_directory, recursive_tree_node.child("output_file").child_value());
   config->recursive_tree = recursive_tree;
 
+  pugi::xml_node sierpinski_triangle_node = config_node.child("sierpinski_triangle");
+  SierpinskiTriangle* sierpinski_triangle = new SierpinskiTriangle();
+  sierpinski_triangle->width = width;
+  sierpinski_triangle->height = height;
+  sierpinski_triangle->color_hex = stoi(sierpinski_triangle_node.child("color_hex").child_value(), nullptr, 16);
+  sierpinski_triangle->filling_color_hex = stoi(sierpinski_triangle_node.child("filling_color_hex").child_value(), nullptr, 16);
+  sierpinski_triangle->background_color_hex = stoi(sierpinski_triangle_node.child("background_color_hex").child_value(), nullptr, 16);
+  sierpinski_triangle->triangle_size = stoi(sierpinski_triangle_node.child("triangle_size").child_value());
+  sierpinski_triangle->max_iterations = stoi(sierpinski_triangle_node.child("max_iterations").child_value());
+  sierpinski_triangle->output_file = join_path(config->output_directory, sierpinski_triangle_node.child("output_file").child_value());
+  config->sierpinski_triangle = sierpinski_triangle;
+
   return config;
 }

@@ -10,6 +10,7 @@
 #include "config_barnsley_fern.hpp"
 #include "config_pythagoras_tree.hpp"
 #include "config_recursive_tree.hpp"
+#include "config_sierpinski_triangle.hpp"
 
 using namespace std;
 
@@ -24,6 +25,7 @@ struct Config {
   BarnsleyFern* barnsley_fern;
   PythagorasTree* pythagoras_tree;
   RecursiveTree* recursive_tree;
+  SierpinskiTriangle* sierpinski_triangle;
 };
 
 #endif
