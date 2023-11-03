@@ -27,4 +27,79 @@
     <color_base>0</color_base>
     <output_file>julia.png</output_file>
   </julia>
+
+  <tricorn>
+    <x_min>-2.3</x_min>
+    <x_max>1.7</x_max>
+    <y_min>-2.0</y_min>
+    <y_max>2.0</y_max>
+    <threshold>3</threshold>
+    <max_iterations>30</max_iterations>
+    <color_base>0</color_base>
+    <output_file>tricorn.png</output_file>
+  </tricorn>
+
+  <burning_ship>
+    <x_min>-1.8</x_min>
+    <x_max>-1.7</x_max>
+    <y_min>-0.1</y_min>
+    <y_max>0.02</y_max>
+    <threshold>10</threshold>
+    <max_iterations>25</max_iterations>
+    <color_base>100</color_base>
+    <output_file>burning_ship.png</output_file>
+  </burning_ship>
+
+  <barnsley_fern>
+    <size_x>10.0</size_x>
+    <size_y>95.0</size_y>
+    <start_x>48.0</start_x>
+    <start_y>0.0</start_y>
+    <zoom>90.0</zoom>
+    <max_iterations>300000</max_iterations>
+    <color_hex>00b02c</color_hex>
+    <background_color_hex>d4ffff</background_color_hex>
+    <output_file>barnsley_fern.png</output_file>
+  </barnsley_fern>
+
+  <pythagoras_tree>
+    <color_from_hue>0</color_from_hue>
+    <color_upto_hue>650</color_upto_hue>
+    <background_color_hex>d4ffff</background_color_hex>
+    <size>15</size>
+    <degree>60</degree>
+    <depth>15</depth>
+    <left>35</left>
+    <bottom>20</bottom>
+    <output_file>pythagoras_tree.png</output_file>
+  </pythagoras_tree>
+
+  <recursive_tree>
+    <shrink>65</shrink>
+    <length>23</length>
+    <angle>20</angle>
+    <max_iterations>10</max_iterations>
+    <stroke_width>3</stroke_width>
+    <color_hex>00b02c</color_hex>
+    <background_color_hex>d4ffff</background_color_hex>
+    <output_file>recursive_tree.png</output_file>
+  </recursive_tree>
+
+  <sierpinski_triangle>
+    <color_hex>ff0000</color_hex>
+    <filling_color_hex>d4ffff</filling_color_hex>
+    <background_color_hex>ffffb0</background_color_hex>
+    <triangle_size>80</triangle_size>
+    <max_iterations>3</max_iterations>
+    <output_file>sierpinski_triangle.png</output_file>
+  </sierpinski_triangle>
+
+  <sierpinski_carpet>
+    <color_hex>8600b3</color_hex>
+    <filling_color_hex>d4ffff</filling_color_hex>
+    <background_color_hex>000000</background_color_hex>
+    <carpet_size>80</carpet_size>
+    <max_iterations>3</max_iterations>
+    <output_file>sierpinski_carpet.png</output_file>
+  </sierpinski_carpet>
 </config>
