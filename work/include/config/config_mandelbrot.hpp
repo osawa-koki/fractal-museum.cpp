@@ -3,16 +3,17 @@
 
 using namespace std;
 
-struct Mandelbrot {
-  int width;
-  int height;
-  double x_min;
-  double x_max;
-  double y_min;
-  double y_max;
-  int max_iterations;
-  int color_hue_base;
-  string output_file;
+struct Mandelbrot
+{
+    int width;
+    int height;
+    double x_min;
+    double x_max;
+    double y_min;
+    double y_max;
+    int max_iterations;
+    int color_hue_base;
+    string output_file;
 };
 
 #endif

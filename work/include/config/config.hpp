@@ -14,18 +14,19 @@
 
 using namespace std;
 
-struct Config {
-  int width;
-  int height;
-  string output_directory;
-  Mandelbrot* mandelbrot;
-  Julia* julia;
-  Tricorn* tricorn;
-  BurningShip* burning_ship;
-  BarnsleyFern* barnsley_fern;
-  PythagorasTree* pythagoras_tree;
-  RecursiveTree* recursive_tree;
-  SierpinskiTriangle* sierpinski_triangle;
+struct Config
+{
+    int width;
+    int height;
+    string output_directory;
+    Mandelbrot *mandelbrot;
+    Julia *julia;
+    Tricorn *tricorn;
+    BurningShip *burning_ship;
+    BarnsleyFern *barnsley_fern;
+    PythagorasTree *pythagoras_tree;
+    RecursiveTree *recursive_tree;
+    SierpinskiTriangle *sierpinski_triangle;
 };
 
 #endif

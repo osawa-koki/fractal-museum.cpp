@@ -4,6 +4,6 @@ using namespace std;
 
 string join_path(string directory, string filename)
 {
-  string path = directory + filename;
-  return path;
+    string path = directory + filename;
+    return path;
 }

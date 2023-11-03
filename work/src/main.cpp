@@ -1,5 +1,5 @@
-#include "drawer.hpp"
 #include "config.hpp"
+#include "drawer.hpp"
 #include "function.hpp"
 
 int main()
