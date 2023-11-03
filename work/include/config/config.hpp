@@ -3,10 +3,10 @@
 
 #include <string>
 
-#include "mandelbrot_config.hpp"
-#include "julia_config.hpp"
-#include "tricorn_config.hpp"
-#include "burning_ship_config.hpp"
+#include "config_mandelbrot.hpp"
+#include "config_julia.hpp"
+#include "config_tricorn.hpp"
+#include "config_burning_ship.hpp"
 
 using namespace std;
 

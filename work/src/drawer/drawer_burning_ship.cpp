@@ -6,7 +6,7 @@
 #include "const.hpp"
 #include "function.hpp"
 #include "interface.hpp"
-#include "julia_config.hpp"
+#include "config_burning_ship.hpp"
 
 using namespace std;
 

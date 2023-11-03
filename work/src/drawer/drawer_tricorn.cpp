@@ -6,14 +6,13 @@
 #include "const.hpp"
 #include "function.hpp"
 #include "interface.hpp"
-#include "tricorn_config.hpp"
+#include "config_tricorn.hpp"
 
 using namespace std;
 
 namespace drawer {
 
   void tricorn(Tricorn* tricorn_config) {
-    // 画像の幅と高さを指定する
     int width = tricorn_config->width;
     int height = tricorn_config->height;
 
