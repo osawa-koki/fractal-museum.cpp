@@ -71,7 +71,7 @@
             <xsd:element name="y_max" type="xsd:float" />
             <xsd:element name="threshold" type="xsd:nonNegativeInteger" />
             <xsd:element name="max_iterations" type="xsd:nonNegativeInteger" />
-            <xsd:element name="color_hue" type="xsd:nonNegativeInteger" />
+            <xsd:element name="color_hue_base" type="xsd:nonNegativeInteger" />
             <xsd:element name="output_file" type="xsd:string" />
           </xsd:sequence>
         </xsd:complexType>
