@@ -22,7 +22,7 @@ const Layout = ({
   const [currentPage, setCurrentPage] = useState<string | null>(null)
 
   useEffect(() => {
-    const path = window.location.pathname.replace(setting.basePath, '')
+    const path = window.location.pathname
     setCurrentPage(path)
   }, [router.pathname])
 
@@ -34,7 +34,7 @@ const Layout = ({
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
         <link
           rel='shortcut icon'
-          href={`${setting.basePath}favicon.ico`}
+          href='/favicon.ico'
           type='image/x-icon'
         />
       </Head>

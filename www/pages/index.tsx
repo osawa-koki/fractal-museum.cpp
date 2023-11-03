@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 import setting from '../setting'
 import { Alert } from 'react-bootstrap'
@@ -9,7 +10,7 @@ export default function Home (): React.JSX.Element {
       <div id='Index' className='d-flex flex-column align-items-center'>
         <h1>{setting.title}</h1>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img id='Logo' className='mt-3' style={{ width: '100%', maxWidth: '100px' }} src={`${setting.basePath}/tako.png`} alt='Logo' />
+        <Image id='Logo' className='mt-3' width={setting.imageSize} height={setting.imageSize} src='/tako.png' alt='Logo' />
         <Alert variant='info' className='mt-5'>
           <Alert.Heading>フラクタル図形とは？</Alert.Heading>
           <hr />
