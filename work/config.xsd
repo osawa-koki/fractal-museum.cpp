@@ -95,8 +95,8 @@
       <xsd:element name="pythagoras_tree">
         <xsd:complexType>
           <xsd:sequence>
-            <xsd:element name="color_from_hue" type="xsd:nonNegativeInteger" />
-            <xsd:element name="color_upto_hue" type="xsd:nonNegativeInteger" />
+            <xsd:element name="color_hue_start" type="xsd:nonNegativeInteger" />
+            <xsd:element name="color_hue_end" type="xsd:nonNegativeInteger" />
             <xsd:element name="background_color_hex" type="HexColor" />
             <xsd:element name="size" type="xsd:nonNegativeInteger" />
             <xsd:element name="degree" type="xsd:nonNegativeInteger" />

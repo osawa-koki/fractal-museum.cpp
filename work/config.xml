@@ -63,8 +63,8 @@
   </barnsley_fern>
 
   <pythagoras_tree>
-    <color_from_hue>0</color_from_hue>
-    <color_upto_hue>650</color_upto_hue>
+    <color_hue_start>0</color_hue_start>
+    <color_hue_end>650</color_hue_end>
     <background_color_hex>d4ffff</background_color_hex>
     <size>15</size>
     <degree>60</degree>

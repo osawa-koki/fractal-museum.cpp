@@ -10,4 +10,5 @@ int main()
     drawer::tricorn(config->tricorn);
     drawer::burning_ship(config->burning_ship);
     drawer::barnsley_fern(config->barnsley_fern);
+    drawer::pythagoras_tree(config->pythagoras_tree);
 }
