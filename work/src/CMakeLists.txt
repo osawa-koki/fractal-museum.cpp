@@ -9,6 +9,7 @@ add_executable(a.out
   ./drawer/drawer_barnsley_fern.cpp
   ./drawer/drawer_pythagoras_tree.cpp
   ./drawer/drawer_recursive_tree.cpp
+  ./drawer/drawer_sierpinski_triangle.cpp
   ./config_parser.cpp
   ./function/hsl_to_rgb.cpp
   ./function/join_path.cpp
