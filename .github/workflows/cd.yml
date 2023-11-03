@@ -73,7 +73,7 @@ jobs:
         with:
           name: ${{ env.artifact-key-fractal-images }}
       - name: Copy artifact
-        run: cp -r ${{ env.work-directory }}dist/ ${{ env.www-directory }}public/
+        run: cp ${{ env.work-directory }}dist/* ${{ env.www-directory }}public/
         working-directory: ${{ github.workspace }}
       - name: Build with Next.js
         run: yarn build
