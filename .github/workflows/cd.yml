@@ -17,7 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Configure CMake
-      run: cmake -H. -Bbuild -GNinja
+      run: cmake -H. -Bbuild
     - name: Build
       run: cmake --build build --config ${{ env.BUILD_TYPE }}
     - name: Exec
