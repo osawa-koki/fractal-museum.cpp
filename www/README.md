@@ -4,6 +4,8 @@
 
 ## 実行方法
 
+`./public/images/`に画像を配置してください！  
+
 ```shell
 yarn install --frozen-lockfile
 
