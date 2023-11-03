@@ -8,10 +8,12 @@ add_executable(a.out
   ./drawer/drawer_burning_ship.cpp
   ./drawer/drawer_barnsley_fern.cpp
   ./drawer/drawer_pythagoras_tree.cpp
+  ./drawer/drawer_recursive_tree.cpp
   ./config_parser.cpp
   ./function/hsl_to_rgb.cpp
   ./function/join_path.cpp
   ./util/draw_polygon.cpp
+  ./util/draw_polyline.cpp
   ./lib/pugixml.cpp
 )
 

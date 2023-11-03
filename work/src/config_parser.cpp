@@ -123,5 +123,19 @@ Config* config_parser() {
   pythagoras_tree->output_file = join_path(config->output_directory, pythagoras_tree_node.child("output_file").child_value());
   config->pythagoras_tree = pythagoras_tree;
 
+  pugi::xml_node recursive_tree_node = config_node.child("recursive_tree");
+  RecursiveTree* recursive_tree = new RecursiveTree();
+  recursive_tree->width = width;
+  recursive_tree->height = height;
+  recursive_tree->shrink = stoi(recursive_tree_node.child("shrink").child_value());
+  recursive_tree->length = stoi(recursive_tree_node.child("length").child_value());
+  recursive_tree->angle = stoi(recursive_tree_node.child("angle").child_value());
+  recursive_tree->max_iterations = stoi(recursive_tree_node.child("max_iterations").child_value());
+  recursive_tree->stroke_width = stoi(recursive_tree_node.child("stroke_width").child_value());
+  recursive_tree->color_hex = stoi(recursive_tree_node.child("color_hex").child_value(), nullptr, 16);
+  recursive_tree->background_color_hex = stoi(recursive_tree_node.child("background_color_hex").child_value(), nullptr, 16);
+  recursive_tree->output_file = join_path(config->output_directory, recursive_tree_node.child("output_file").child_value());
+  config->recursive_tree = recursive_tree;
+
   return config;
 }

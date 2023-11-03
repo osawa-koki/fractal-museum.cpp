@@ -16,7 +16,7 @@ using namespace std;
 
 namespace drawer {
 
-  vector<Coord> pythagoras_tree_get_left_points(double x, double y, int size, int angle, int degree) {
+  vector<Coord> pythagoras_tree_get_left_points(int x, int y, int size, int angle, int degree) {
     vector<Coord> points(4);
     points[0] = {x, y};
     points[1] = {

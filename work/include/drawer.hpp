@@ -12,6 +12,7 @@ namespace drawer {
   void burning_ship(BurningShip* burning_ship_config);
   void barnsley_fern(BarnsleyFern* barnsley_fern_config);
   void pythagoras_tree(PythagorasTree* pythagoras_tree_config);
+  void recursive_tree(RecursiveTree* recursive_tree_config);
 }
 
 #endif
