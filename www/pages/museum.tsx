@@ -16,7 +16,7 @@ export default function Home (props: Props): React.JSX.Element {
         <Splide
           options={{
             type: 'loop',
-            perPage: 1,
+            perPage: 1
           }}
           className='d-block m-auto'
           style={{
@@ -35,11 +35,11 @@ export default function Home (props: Props): React.JSX.Element {
   )
 }
 
-export async function getStaticProps(): Promise<{props: Props}> {
+export async function getStaticProps (): Promise<{ props: Props }> {
   const imageFilePaths = fs.readdirSync('./public/images').sort(() => Math.random() - 0.5)
   return {
     props: {
-      imageFilePaths,
+      imageFilePaths
     }
   }
 }

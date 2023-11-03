@@ -6,7 +6,7 @@ const setting = {
   basePath: Env.basePath,
   apiPath: isProd ? '' : 'http://localhost:8000',
   title: '🌶️ Fractal Museum 🌶️',
-  imageSize: '512px',
+  imageSize: '512px'
 }
 
 export default setting
