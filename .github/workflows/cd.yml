@@ -1,0 +1,29 @@
+name: cd
+
+on:
+  workflow_dispatch:
+  push:
+    tags: [ 'v-*' ]
+
+env:
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    defaults:
+      run:
+        working-directory: ${{ github.workspace }}/work/
+    steps:
+    - uses: actions/checkout@v3
+    - name: Configure CMake
+      run: cmake -H. -Bbuild -GNinja
+    - name: Build
+      run: cmake --build build --config ${{ env.BUILD_TYPE }}
+    - name: Exec
+      run: ./build/bin/program.out
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: fractal-images
+        path: ${{ github.workspace }}/work/dist/
