@@ -47,6 +47,7 @@ Config* config_parser() {
   mandelbrot->y_min = stod(mandelbrot_node.child("y_min").child_value());
   mandelbrot->y_max = stod(mandelbrot_node.child("y_max").child_value());
   mandelbrot->max_iterations = stoi(mandelbrot_node.child("max_iterations").child_value());
+    mandelbrot->color_hue_base = stoi(mandelbrot_node.child("color_hue_base").child_value());
   mandelbrot->output_file = join_path(config->output_directory, mandelbrot_node.child("output_file").child_value());
   config->mandelbrot = mandelbrot;
 
@@ -61,7 +62,7 @@ Config* config_parser() {
   julia->cx = stod(julia_node.child("cx").child_value());
   julia->cy = stod(julia_node.child("cy").child_value());
   julia->max_iterations = stoi(julia_node.child("max_iterations").child_value());
-  julia->color_base = stoi(julia_node.child("color_base").child_value());
+  julia->color_hue_base = stoi(julia_node.child("color_hue_base").child_value());
   julia->output_file = join_path(config->output_directory, julia_node.child("output_file").child_value());
   config->julia = julia;
 
@@ -75,7 +76,7 @@ Config* config_parser() {
   tricorn->y_max = stod(tricorn_node.child("y_max").child_value());
   tricorn->threshold = stoi(tricorn_node.child("threshold").child_value());
   tricorn->max_iterations = stoi(tricorn_node.child("max_iterations").child_value());
-  tricorn->color_base = stoi(tricorn_node.child("color_base").child_value());
+  tricorn->color_hue_base = stoi(tricorn_node.child("color_hue_base").child_value());
   tricorn->output_file = join_path(config->output_directory, tricorn_node.child("output_file").child_value());
   config->tricorn = tricorn;
 

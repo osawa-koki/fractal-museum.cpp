@@ -12,6 +12,7 @@
     <y_min>-1.5</y_min>
     <y_max>1.5</y_max>
     <max_iterations>30</max_iterations>
+    <color_hue_base>0</color_hue_base>
     <output_file>mandelbrot.png</output_file>
   </mandelbrot>
 
@@ -24,7 +25,7 @@
     <cy>0.6</cy>
     <threshold>100</threshold>
     <max_iterations>200</max_iterations>
-    <color_base>0</color_base>
+    <color_hue_base>0</color_hue_base>
     <output_file>julia.png</output_file>
   </julia>
 
@@ -35,7 +36,7 @@
     <y_max>2.0</y_max>
     <threshold>3</threshold>
     <max_iterations>30</max_iterations>
-    <color_base>0</color_base>
+    <color_hue_base>0</color_hue_base>
     <output_file>tricorn.png</output_file>
   </tricorn>
 

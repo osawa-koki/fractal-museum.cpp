@@ -2,9 +2,9 @@ SET(CMAKE_CXX_COMPILER /usr/bin/g++)
 
 add_executable(a.out
   ./main.cpp
-  ./drawer/mandelbrot.cpp
-  ./drawer/julia.cpp
-  ./drawer/tricorn.cpp
+  ./drawer/drawer_mandelbrot.cpp
+  ./drawer/drawer_julia.cpp
+  ./drawer/drawer_tricorn.cpp
   ./config_parser.cpp
   ./function/hsl_to_rgb.cpp
   ./function/join_path.cpp

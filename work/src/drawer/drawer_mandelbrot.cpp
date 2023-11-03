@@ -21,6 +21,7 @@ namespace drawer {
     double y_min = mandelbrot_config->y_min;
     double y_max = mandelbrot_config->y_max;
 
+    int color_hue_base = mandelbrot_config->color_hue_base;
     int max_iterations = mandelbrot_config->max_iterations;
 
     // 画像のデータを格納する配列を確保する
@@ -52,7 +53,7 @@ namespace drawer {
         }
 
         // 計算結果を色に変換する
-        int color = i * MAX_COLOR_VALUE / max_iterations;
+        int color = i * MAX_COLOR_VALUE / max_iterations + color_hue_base;
         HSL* hsl = new HSL();
         hsl->h = color;
         hsl->s = 100;
