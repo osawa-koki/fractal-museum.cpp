@@ -1,3 +1,5 @@
+SET(CMAKE_CXX_COMPILER /usr/bin/g++)
+
 add_executable(a.out
   ./main.cpp
   ./drawer/mandelbrot.cpp
