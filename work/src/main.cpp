@@ -9,4 +9,5 @@ int main()
     drawer::julia(config->julia);
     drawer::tricorn(config->tricorn);
     drawer::burning_ship(config->burning_ship);
+    drawer::barnsley_fern(config->barnsley_fern);
 }

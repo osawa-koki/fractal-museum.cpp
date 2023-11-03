@@ -94,5 +94,19 @@ Config* config_parser() {
   burning_ship->output_file = join_path(config->output_directory, burning_ship_node.child("output_file").child_value());
   config->burning_ship = burning_ship;
 
+  pugi::xml_node barnsley_fern_node = config_node.child("barnsley_fern");
+  BarnsleyFern* barnsley_fern = new BarnsleyFern();
+  barnsley_fern->width = width;
+  barnsley_fern->height = height;
+  barnsley_fern->size = stod(barnsley_fern_node.child("size").child_value());
+  barnsley_fern->start_x = stod(barnsley_fern_node.child("start_x").child_value());
+  barnsley_fern->start_y = stod(barnsley_fern_node.child("start_y").child_value());
+  barnsley_fern->zoom = stod(barnsley_fern_node.child("zoom").child_value());
+  barnsley_fern->max_iterations = stoi(barnsley_fern_node.child("max_iterations").child_value());
+  barnsley_fern->color_hex = stoi(barnsley_fern_node.child("color_hex").child_value(), nullptr, 16);
+  barnsley_fern->background_color_hex = stoi(barnsley_fern_node.child("background_color_hex").child_value(), nullptr, 16);
+  barnsley_fern->output_file = join_path(config->output_directory, barnsley_fern_node.child("output_file").child_value());
+  config->barnsley_fern = barnsley_fern;
+
   return config;
 }

@@ -10,6 +10,7 @@ namespace drawer {
   void julia(Julia* julia_config);
   void tricorn(Tricorn* tricorn_config);
   void burning_ship(BurningShip* burning_ship_config);
+  void barnsley_fern(BarnsleyFern* barnsley_fern_config);
 }
 
 #endif

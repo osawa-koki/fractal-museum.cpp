@@ -7,6 +7,7 @@
 #include "config_julia.hpp"
 #include "config_tricorn.hpp"
 #include "config_burning_ship.hpp"
+#include "config_barnsley_fern.hpp"
 
 using namespace std;
 
@@ -18,6 +19,7 @@ struct Config {
   Julia* julia;
   Tricorn* tricorn;
   BurningShip* burning_ship;
+  BarnsleyFern* barnsley_fern;
 };
 
 #endif

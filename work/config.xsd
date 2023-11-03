@@ -80,8 +80,7 @@
       <xsd:element name="barnsley_fern">
         <xsd:complexType>
           <xsd:sequence>
-            <xsd:element name="size_x" type="xsd:float" />
-            <xsd:element name="size_y" type="xsd:float" />
+            <xsd:element name="size" type="xsd:float" />
             <xsd:element name="start_x" type="xsd:float" />
             <xsd:element name="start_y" type="xsd:float" />
             <xsd:element name="zoom" type="xsd:float" />
