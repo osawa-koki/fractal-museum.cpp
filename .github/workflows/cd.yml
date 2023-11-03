@@ -72,9 +72,7 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: ${{ env.artifact-key-fractal-images }}
-      - name: Copy artifact
-        run: cp ${{ env.work-directory }}dist/* ${{ env.www-directory }}public/
-        working-directory: ${{ github.workspace }}
+          path: ${{ env.www-directory }}public/images/
       - name: Build with Next.js
         run: yarn build
       - name: Upload artifact
