@@ -14,15 +14,14 @@
 
 using namespace std;
 
-namespace drawer {
-
-  struct RecursiveTreeNextPointStruct {
+namespace private_recursive_tree {
+  struct NextPointStruct {
     int x;
     int y;
     int degree;
   };
 
-  struct RecursiveTreeGlobalConfig {
+  struct GlobalConfig {
     int width;
     int height;
     int shrink;
@@ -34,11 +33,11 @@ namespace drawer {
     int stroke_diff;
   };
 
-  void recursive_tree_rec_draw(png_bytep *row_pointers, RecursiveTreeGlobalConfig* global_config, int x, int y, int degree, int n) {
+  void rec_draw(png_bytep *row_pointers, GlobalConfig* global_config, int x, int y, int degree, int n) {
     if (global_config->max_iterations < n) return;
 
     int len = (int)(pow(global_config->shrink / 100.0, n) * (global_config->width + global_config->height) / 2) * global_config->length / 100.0;
-    vector<RecursiveTreeNextPointStruct> moved = {};
+    vector<NextPointStruct> moved = {};
 
     // 右側
     {
@@ -52,7 +51,7 @@ namespace drawer {
       } else {
         moved_y = y + tan(ang * M_PI / 180.0) * (x - moved_x);
       }
-      RecursiveTreeNextPointStruct tmp = {moved_x, moved_y, ang};
+      NextPointStruct tmp = {moved_x, moved_y, ang};
       moved.push_back(tmp);
     }
 
@@ -68,7 +67,7 @@ namespace drawer {
       } else {
         moved_y = y + tan(ang * M_PI / 180.0) * (x - moved_x);
       }
-      RecursiveTreeNextPointStruct tmp = {moved_x, moved_y, ang};
+      NextPointStruct tmp = {moved_x, moved_y, ang};
       moved.push_back(tmp);
     }
 
@@ -80,9 +79,14 @@ namespace drawer {
         {m.x + global_config->stroke_diff, m.y + global_config->stroke_diff}
       };
       draw_polyline(row_pointers, global_config->color, vertices);
-      recursive_tree_rec_draw(row_pointers, global_config, m.x, m.y, m.degree, n + 1);
+      rec_draw(row_pointers, global_config, m.x, m.y, m.degree, n + 1);
     }
   }
+}
+
+using namespace private_recursive_tree;
+
+namespace drawer {
 
   void recursive_tree(RecursiveTree* recursive_tree_config) {
     // 画像の幅と高さを指定する
@@ -97,7 +101,7 @@ namespace drawer {
     int color = recursive_tree_config->color_hex;
     int background_color = recursive_tree_config->background_color_hex;
 
-    RecursiveTreeGlobalConfig* global_config = new RecursiveTreeGlobalConfig();
+    GlobalConfig* global_config = new GlobalConfig();
     global_config->width = width;
     global_config->height = height;
     global_config->shrink = shrink;
@@ -136,7 +140,7 @@ namespace drawer {
     };
     draw_polyline(row_pointers, global_config->color, vertices);
 
-    recursive_tree_rec_draw(row_pointers, global_config, width / 2, height - (height * length / 100.0), 90, 0);
+    rec_draw(row_pointers, global_config, width / 2, height - (height * length / 100.0), 90, 0);
     delete global_config;
 
     // 画像をファイルに出力する
