@@ -152,5 +152,17 @@ Config *config_parser()
     sierpinski_triangle->output_file = join_path(config->output_directory, sierpinski_triangle_node.child("output_file").child_value());
     config->sierpinski_triangle = sierpinski_triangle;
 
+    pugi::xml_node sierpinski_carpet_node = config_node.child("sierpinski_carpet");
+    SierpinskiCarpet* sierpinski_carpet = new SierpinskiCarpet();
+    sierpinski_carpet->width = width;
+    sierpinski_carpet->height = height;
+    sierpinski_carpet->color_hex = stoi(sierpinski_carpet_node.child("color_hex").child_value(), nullptr, 16);
+    sierpinski_carpet->filling_color_hex = stoi(sierpinski_carpet_node.child("filling_color_hex").child_value(), nullptr, 16);
+    sierpinski_carpet->background_color_hex = stoi(sierpinski_carpet_node.child("background_color_hex").child_value(), nullptr, 16);
+    sierpinski_carpet->carpet_size = stoi(sierpinski_carpet_node.child("carpet_size").child_value());
+    sierpinski_carpet->max_iterations = stoi(sierpinski_carpet_node.child("max_iterations").child_value());
+    sierpinski_carpet->output_file = join_path(config->output_directory, sierpinski_carpet_node.child("output_file").child_value());
+    config->sierpinski_carpet = sierpinski_carpet;
+
     return config;
 }

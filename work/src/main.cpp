@@ -13,4 +13,5 @@ int main()
     drawer::pythagoras_tree(config->pythagoras_tree);
     drawer::recursive_tree(config->recursive_tree);
     drawer::sierpinski_triangle(config->sierpinski_triangle);
+    drawer::sierpinski_carpet(config->sierpinski_carpet);
 }
