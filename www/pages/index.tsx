@@ -1,4 +1,5 @@
 import React from 'react'
+
 import setting from '../setting'
 
 export default function Home (): React.JSX.Element {

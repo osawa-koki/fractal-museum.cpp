@@ -3,6 +3,8 @@ import { type AppProps } from 'next/app'
 import Head from 'next/head'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
+import '@splidejs/splide/css'
+
 import '../styles/style.scss'
 import '../styles/menu.scss'
 
