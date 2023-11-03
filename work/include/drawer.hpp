@@ -15,6 +15,7 @@ namespace drawer
     void pythagoras_tree(PythagorasTree *pythagoras_tree_config);
     void recursive_tree(RecursiveTree *recursive_tree_config);
     void sierpinski_triangle(SierpinskiTriangle *sierpinski_triangle_config);
+    void sierpinski_carpet(SierpinskiCarpet *sierpinski_carpet_config);
 }
 
 #endif
