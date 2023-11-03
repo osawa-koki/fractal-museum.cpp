@@ -10,7 +10,7 @@ add_executable(a.out
 
 set_target_properties(a.out PROPERTIES OUTPUT_NAME "./program.out")
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c17 -Wall -Wextra -Wpedantic")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -Wall -Wextra -Wpedantic")
 target_link_libraries(a.out
   PUBLIC png
 )
