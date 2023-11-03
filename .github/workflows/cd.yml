@@ -53,7 +53,7 @@ jobs:
         with:
           node-version: ${{ env.node-version }}
           cache: yarn
-          cache-dependency-path: yarn.lock
+          cache-dependency-path: ${{ env.www-directory }}yarn.lock
       - name: Setup Pages
         uses: actions/configure-pages@v3
         with:
