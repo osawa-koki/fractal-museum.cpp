@@ -1,6 +1,3 @@
-#ifndef HSL_TO_RGB_CPP
-#define HSL_TO_RGB_CPP
-
 #include <array>
 #include <cmath>
 #include <iostream>
@@ -58,5 +55,3 @@ RGB *hsl_to_rgb(HSL *hsl)
 
     return rgb;
 }
-
-#endif
