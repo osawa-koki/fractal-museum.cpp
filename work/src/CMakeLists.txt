@@ -5,6 +5,7 @@ add_executable(a.out
   ./drawer/drawer_mandelbrot.cpp
   ./drawer/drawer_julia.cpp
   ./drawer/drawer_tricorn.cpp
+  ./drawer/drawer_burning_ship.cpp
   ./config_parser.cpp
   ./function/hsl_to_rgb.cpp
   ./function/join_path.cpp

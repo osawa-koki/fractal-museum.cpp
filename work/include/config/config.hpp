@@ -6,6 +6,7 @@
 #include "mandelbrot_config.hpp"
 #include "julia_config.hpp"
 #include "tricorn_config.hpp"
+#include "burning_ship_config.hpp"
 
 using namespace std;
 
@@ -16,6 +17,7 @@ struct Config {
   Mandelbrot* mandelbrot;
   Julia* julia;
   Tricorn* tricorn;
+  BurningShip* burning_ship;
 };
 
 #endif

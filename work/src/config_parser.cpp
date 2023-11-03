@@ -80,5 +80,19 @@ Config* config_parser() {
   tricorn->output_file = join_path(config->output_directory, tricorn_node.child("output_file").child_value());
   config->tricorn = tricorn;
 
+  pugi::xml_node burning_ship_node = config_node.child("burning_ship");
+  BurningShip* burning_ship = new BurningShip();
+  burning_ship->width = width;
+  burning_ship->height = height;
+  burning_ship->x_min = stod(burning_ship_node.child("x_min").child_value());
+  burning_ship->x_max = stod(burning_ship_node.child("x_max").child_value());
+  burning_ship->y_min = stod(burning_ship_node.child("y_min").child_value());
+  burning_ship->y_max = stod(burning_ship_node.child("y_max").child_value());
+  burning_ship->threshold = stoi(burning_ship_node.child("threshold").child_value());
+  burning_ship->max_iterations = stoi(burning_ship_node.child("max_iterations").child_value());
+  burning_ship->color_hue_base = stoi(burning_ship_node.child("color_hue_base").child_value());
+  burning_ship->output_file = join_path(config->output_directory, burning_ship_node.child("output_file").child_value());
+  config->burning_ship = burning_ship;
+
   return config;
 }
