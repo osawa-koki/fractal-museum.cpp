@@ -5,15 +5,27 @@ on:
   push:
     tags: [ 'v-*' ]
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 env:
   BUILD_TYPE: Release
+  node-version: 20.x
+  work-directory: ${{ github.workspace }}/work/
+  www-directory: ${{ github.workspace }}/www/
 
 jobs:
-  build:
+  work-build:
     runs-on: ubuntu-22.04
     defaults:
       run:
-        working-directory: ${{ github.workspace }}/work/
+        working-directory: ${{ env.work-directory }}
     steps:
     - uses: actions/checkout@v3
     - name: Configure CMake
@@ -26,4 +38,46 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: fractal-images
-        path: ${{ github.workspace }}/work/dist/
+        path: ${{ env.work-directory }}dist/
+  www-build:
+    runs-on: ubuntu-22.04
+    needs: work-build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.node-version }}
+          cache: yarn
+          cache-dependency-path: yarn.lock
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+        with:
+          static_site_generator: next
+      - name: Restore cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            .next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('yarn.lock') }}-
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile --non-interactive --production
+      - name: Build with Next.js
+        run: yarn build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ${{ env.www-directory }}dist/
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-22.04
+    needs: www-build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
