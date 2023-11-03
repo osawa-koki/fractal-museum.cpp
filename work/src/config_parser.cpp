@@ -108,5 +108,20 @@ Config* config_parser() {
   barnsley_fern->output_file = join_path(config->output_directory, barnsley_fern_node.child("output_file").child_value());
   config->barnsley_fern = barnsley_fern;
 
+  pugi::xml_node pythagoras_tree_node = config_node.child("pythagoras_tree");
+  PythagorasTree* pythagoras_tree = new PythagorasTree();
+  pythagoras_tree->width = width;
+  pythagoras_tree->height = height;
+  pythagoras_tree->color_hue_start = stoi(pythagoras_tree_node.child("color_hue_start").child_value());
+  pythagoras_tree->color_hue_end = stoi(pythagoras_tree_node.child("color_hue_end").child_value());
+  pythagoras_tree->background_color_hex = stoi(pythagoras_tree_node.child("background_color_hex").child_value(), nullptr, 16);
+  pythagoras_tree->size = stoi(pythagoras_tree_node.child("size").child_value());
+  pythagoras_tree->degree = stoi(pythagoras_tree_node.child("degree").child_value());
+  pythagoras_tree->depth = stoi(pythagoras_tree_node.child("depth").child_value());
+  pythagoras_tree->left = stof(pythagoras_tree_node.child("left").child_value());
+  pythagoras_tree->bottom = stof(pythagoras_tree_node.child("bottom").child_value());
+  pythagoras_tree->output_file = join_path(config->output_directory, pythagoras_tree_node.child("output_file").child_value());
+  config->pythagoras_tree = pythagoras_tree;
+
   return config;
 }

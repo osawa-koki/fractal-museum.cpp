@@ -13,4 +13,9 @@ struct HSL {
   int l;
 };
 
+struct Coord {
+  double x;
+  double y;
+};
+
 #endif
