@@ -6,7 +6,7 @@
 #include "const.hpp"
 #include "function.hpp"
 #include "interface.hpp"
-#include "julia_config.hpp"
+#include "config_julia.hpp"
 
 using namespace std;
 

@@ -6,7 +6,7 @@
 #include "const.hpp"
 #include "function.hpp"
 #include "interface.hpp"
-#include "mandelbrot_config.hpp"
+#include "config_mandelbrot.hpp"
 
 using namespace std;
 
