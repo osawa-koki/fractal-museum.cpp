@@ -47,7 +47,7 @@
     <y_max>0.02</y_max>
     <threshold>10</threshold>
     <max_iterations>25</max_iterations>
-    <color_base>100</color_base>
+    <color_hue_base>100</color_hue_base>
     <output_file>burning_ship.png</output_file>
   </burning_ship>
 

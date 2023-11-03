@@ -8,4 +8,5 @@ int main()
     drawer::mandelbrot(config->mandelbrot);
     drawer::julia(config->julia);
     drawer::tricorn(config->tricorn);
+    drawer::burning_ship(config->burning_ship);
 }

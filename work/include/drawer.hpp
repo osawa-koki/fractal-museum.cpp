@@ -9,6 +9,7 @@ namespace drawer {
   void mandelbrot(Mandelbrot* mandelbrot_config);
   void julia(Julia* julia_config);
   void tricorn(Tricorn* tricorn_config);
+  void burning_ship(BurningShip* burning_ship_config);
 }
 
 #endif
