@@ -14,10 +14,8 @@
 
 using namespace std;
 
-namespace drawer
-{
-
-    vector<Coord> pythagoras_tree_get_left_points(int x, int y, int size, int angle, int degree)
+namespace private_pythagoras_tree {
+    vector<Coord> get_left_points(int x, int y, int size, int angle, int degree)
     {
         vector<Coord> points(4);
         points[0] = {x, y};
@@ -35,7 +33,7 @@ namespace drawer
         };
         return points;
     }
-    vector<Coord> pythagoras_tree_get_right_points(double x, double y, int size, int angle, int degree)
+    vector<Coord> get_right_points(double x, double y, int size, int angle, int degree)
     {
         vector<Coord> points(4);
         points[0] = {x, y};
@@ -54,7 +52,7 @@ namespace drawer
         return points;
     }
 
-    void pythagoras_tree_rec_draw(png_bytep *row_pointers, Coord p1, Coord p2, int size, int angle, int degree, int n, int i, int current_color, int color_step)
+    void rec_draw(png_bytep *row_pointers, Coord p1, Coord p2, int size, int angle, int degree, int n, int i, int current_color, int color_step)
     {
         if (n == 0)
             return;
@@ -70,12 +68,12 @@ namespace drawer
         // 左側
         {
             double smalled_size = cos(degree * M_PI / 180) * size;
-            vector<Coord> points = pythagoras_tree_get_left_points(p1.x, p1.y, smalled_size, angle, degree);
+            vector<Coord> points = get_left_points(p1.x, p1.y, smalled_size, angle, degree);
             draw_polygon(
                 row_pointers,
                 color,
                 points);
-            pythagoras_tree_rec_draw(
+            rec_draw(
                 row_pointers,
                 points[3],
                 points[2],
@@ -91,12 +89,12 @@ namespace drawer
         // 右側
         {
             double smalled_size = sin(degree * M_PI / 180) * size;
-            vector<Coord> points = pythagoras_tree_get_right_points(p2.x, p2.y, smalled_size, angle, degree);
+            vector<Coord> points = get_right_points(p2.x, p2.y, smalled_size, angle, degree);
             draw_polygon(
                 row_pointers,
                 color,
                 points);
-            pythagoras_tree_rec_draw(
+            rec_draw(
                 row_pointers,
                 points[2],
                 points[1],
@@ -109,6 +107,12 @@ namespace drawer
                 color_step);
         }
     }
+}
+
+using namespace private_pythagoras_tree;
+
+namespace drawer
+{
 
     void pythagoras_tree(PythagorasTree *pythagoras_tree_config)
     {
@@ -168,7 +172,7 @@ namespace drawer
                 Coord{left_size + box_size / 2, height - bottom_size},
                 Coord{left_size - box_size / 2, height - bottom_size}});
 
-        pythagoras_tree_rec_draw(
+        rec_draw(
             row_pointers,
             Coord{left_size - box_size / 2, height - bottom_size - box_size},
             Coord{left_size - box_size / 2 + box_size, height - bottom_size - box_size},
